@@ -4,7 +4,7 @@ include { initOptions; saveFiles; getSoftwareName } from './functions'
 params.options = [:]
 options        = initOptions(params.options)
 
-process PLINK {
+process PLINK_VCF {
     tag "$meta.id"
     label 'process_medium'
     publishDir "${params.outdir}",
