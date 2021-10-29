@@ -711,6 +711,10 @@ gatk4/genotypegvcfs:
   - modules/gatk4/genotypegvcfs/**
   - tests/modules/gatk4/genotypegvcfs/**
 
+gatk4/genomicsdbimport:
+  - modules/gatk4/genomicsdbimport/**
+  - tests/modules/gatk4/genomicsdbimport/**
+
 gatk4/getpileupsummaries:
   - modules/gatk4/getpileupsummaries/**
   - tests/modules/gatk4/getpileupsummaries/**
@@ -1303,29 +1307,7 @@ pbccs:
   - modules/pbccs/**
   - tests/modules/pbccs/**
 
-peddy:
-  - modules/peddy/**
-  - tests/modules/peddy/**
 
-phantompeakqualtools:
-  - modules/phantompeakqualtools/**
-  - tests/modules/phantompeakqualtools/**
-
-phyloflash:
-  - modules/phyloflash/**
-  - tests/modules/phyloflash/**
-
-picard/addorreplacereadgroups:
-  - modules/picard/addorreplacereadgroups/**
-  - tests/modules/picard/addorreplacereadgroups/**
-
-picard/cleansam:
-  - modules/picard/cleansam/**
-  - tests/modules/picard/cleansam/**
-
-picard/collecthsmetrics:
-  - modules/picard/collecthsmetrics/**
-  - tests/modules/picard/collecthsmetrics/**
 
 picard/collectmultiplemetrics:
   - modules/picard/collectmultiplemetrics/**
