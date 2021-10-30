@@ -1,32 +1,35 @@
 name: phylophlan
-## TODO nf-core: Add a description of the module and list keywords
 description: write your description here
 keywords:
-  - sort
+  - phylogenetic
+  - microbial
+  - genomes
+  - metagenomes
 tools:
   - phylophlan:
-      ## TODO nf-core: Add a description and other details for the software below
       description: Precise phylogenetic analysis of microbial isolates and genomes from metagenomes
-      homepage: None
-      documentation: None
-      tool_dev_url: None
-      doi: ""
+      homepage: "https://huttenhower.sph.harvard.edu/phylophlan"
+      documentation: "https://github.com/biobakery/biobakery/wiki/PhyloPhlAn3"
+      tool_dev_url: "https://github.com/biobakery/phylophlan"
+      doi: "10.1038/s41467-020-16366-7"
       licence: ['MIT License']
 
-## TODO nf-core: Add a description of all of the variables used as input
 input:
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  ## TODO nf-core: Delete / customise this example input
-  - bam:
+  - fasta_genomes:
       type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: fasta file
+      pattern: "*.{fasta.gz,fasta,fa.gz,fa}"
+        e.g. [ id:'test', single_end:false ]
+  - phylophlan_configuration_file:
+      type: file
+      description: phylophlan configuration file following pattern described on manual
+      pattern: "*.{cfg}"
 
-## TODO nf-core: Add a description of all of the variables used as output
 output:
   - meta:
       type: map
@@ -37,11 +40,19 @@ output:
       type: file
       description: File containing software versions
       pattern: "versions.yml"
-  ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - raxml_tre:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Phylogenetic tree built with raxml
+      pattern: "*.{tre}"
+  - aln:
+      type: file
+      description: Fasta alignment file
+      pattern: "*.{aln}"
+  - tre:
+      type: file
+      description: Phylogenetic tree built with FastTree
+      pattern: "*.{tre}"
+
 
 authors:
   - "@Mxrcon"
