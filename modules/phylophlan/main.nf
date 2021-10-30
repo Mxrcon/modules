@@ -20,7 +20,7 @@ process PHYLOPHLAN {
 
     input:
     tuple val(meta), path(fasta_genomes)
-    tuple val(meta), path(phylophlan_database)
+    tuple val(meta), val(phylophlan_database)
     tuple val(meta), path(phylophlan_configuration_file)
 
     output:
@@ -34,8 +34,8 @@ process PHYLOPHLAN {
     """
     mkdir ${prefix}
     mv ${fasta_genomes} ${prefix}/.
-
     phylophlan -i ${prefix} \
+    $options.args \
     -d ${phylophlan_database} \
     --diversity ${params.phylophlan_diversity} \
     -f  ${phylophlan_configuration_file} \
