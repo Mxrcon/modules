@@ -1079,6 +1079,10 @@ maxbin2:
   - modules/maxbin2/**
   - tests/modules/maxbin2/**
 
+md5sum:
+  - modules/md5sum/**
+  - tests/modules/md5sum/**
+
 medaka:
   - modules/medaka/**
   - tests/modules/medaka/**
