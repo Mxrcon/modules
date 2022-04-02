@@ -1371,6 +1371,10 @@ plasmidid:
   - modules/plasmidid/**
   - tests/modules/plasmidid/**
 
+plink/bfile:
+  - modules/plink/bfile/**
+  - tests/modules/plink/bfile/**
+
 plink/extract:
   - modules/plink/extract/**
   - tests/modules/plink/extract/**

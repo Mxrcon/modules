@@ -1,0 +1,16 @@
+- name: plink bfile test_plink_bfile
+  command: nextflow run tests/modules/plink/bfile -entry test_plink_bfile -c tests/config/nextflow.config
+  tags:
+    - plink/bfile
+    - plink
+  files:
+    - path: output/plink/test.rnaseq_out.bed
+      md5sum: fa50154f8645cc5d6c7afde217c3f70d
+    - path: output/plink/test.rnaseq_out.bim
+      md5sum: 583363081fd59f30c8991b3c43d0d2f9
+    - path: output/plink/test.rnaseq_out.fam
+      md5sum: 7807d392eaf90eef367ae9951ebaf0e1
+    - path: output/plink/test.rnaseq_out.nosex
+      md5sum: 0eb9c6dcf48a6f5374c92be24e5d474e
+    - path: output/plink/versions.yml
+      md5sum: 5583a0561daf930c765c90bd89729b22
