@@ -1,0 +1,10 @@
+- name: phylophlan config test_phylophlan_config
+  command: nextflow run tests/modules/phylophlan/config -entry test_phylophlan_config -c tests/config/nextflow.config
+  tags:
+    - phylophlan
+    - phylophlan/config
+  files:
+    - path: output/phylophlan/phylophlan_config.cfg
+      md5sum: 3a7d6123729142450c30adaa3534d668
+    - path: output/phylophlan/versions.yml
+      md5sum: 1cb2970fa6ed22d1563485668e7e5742

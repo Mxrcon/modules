@@ -1,11 +1,14 @@
 process PHYLOPHLAN_CONFIG {
-    tag "$meta.id"
+    tag "phylophlan_config"
     label 'process_medium'
 
     conda (params.enable_conda ? "bioconda::phylophlan=3.0.2" : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/phylophlan:3.0.2--py_0':
         'quay.io/biocontainers/phylophlan:3.0.2--py_0' }"
+
+
+    input:
 
     output:
     path("*.cfg")  , emit: cfg
@@ -16,7 +19,6 @@ process PHYLOPHLAN_CONFIG {
 
     script:
     def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
 
     """
     phylophlan_write_config_file \\
@@ -25,7 +27,7 @@ process PHYLOPHLAN_CONFIG {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        phylophlan: \$(phylophlan -v | sed 's/^PhyloPhlAn\ version\ //' | sed 's/\ \(.*\)//' )
+        phylophlan: \$(echo \$(phylophlan -v | sed 's/^PhyloPhlAn\sversion//'))
     END_VERSIONS
     """
 }

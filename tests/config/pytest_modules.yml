@@ -1315,6 +1315,14 @@ phyloflash:
   - modules/phyloflash/**
   - tests/modules/phyloflash/**
 
+phylophlan/config:
+  - modules/phylophlan/config/**
+  - tests/modules/phylophlan/config/**
+
+phylophlan/phylogeny:
+  - modules/phylophlan/phylogeny/**
+  - tests/modules/phylophlan/phylogeny/**
+
 picard/addorreplacereadgroups:
   - modules/picard/addorreplacereadgroups/**
   - tests/modules/picard/addorreplacereadgroups/**
