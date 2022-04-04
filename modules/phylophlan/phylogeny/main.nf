@@ -9,7 +9,6 @@ process PHYLOPHLAN_PHYLOGENY {
 
     input:
     path("fasta_genomes/*")
-    tuple val(meta), path(phylophlan_database)
     tuple val(meta), path(phylophlan_configuration_file)
 
     output:
@@ -27,7 +26,6 @@ process PHYLOPHLAN_PHYLOGENY {
     def diversity = task.ext.diversity ?: "medium"
     """
     phylophlan -i fasta_genomes \\
-    -d ${phylophlan_database} \\
     -f ${phylophlan_configuration_file} \\
     --nproc ${tasks.cpus} \\
     ${args}

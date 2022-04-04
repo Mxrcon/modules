@@ -21,7 +21,6 @@ process PHYLOPHLAN_CONFIG {
     """
     phylophlan_write_config_file \\
     -o phylophlan_config.cfg \\
-    -d ${phylophlan_database} \\
     ${args}
 
     cat <<-END_VERSIONS > versions.yml
